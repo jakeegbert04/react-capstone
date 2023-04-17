@@ -11,15 +11,17 @@ import Footer from "./navigation/Footer";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/gallery" component={Gallery} />
-          <Route path="/gallery/:slug" component={Show} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+          <div className="main-container">
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/gallery" component={Gallery} />
+            <Route path="/gallery/:slug" component={Show} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+          </div>
         </Switch>
         <Footer />
       </Router>
