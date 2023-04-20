@@ -18,7 +18,7 @@ export default function App() {
           <div className="main-container">
             <Route exact path="/" component={Landing} />
             <Route exact path="/gallery" component={Gallery} />
-            <Route path="/gallery/:slug" component={Show} />
+            <Route path="/gallery/:id" component={Show} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
           </div>

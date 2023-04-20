@@ -5,7 +5,7 @@ export default function About() {
         <h1>About This Project</h1>
         <p>This project is about fetching movies and tv shows from an api. You can view shows on the gallery page and each show/movie has it's own page of data. This webpage is designed in react. </p>
       </div>
-      <div className="industry-goals">
+      <div className="industry-goals-wrapper">
         <h1>Industry Goals </h1>
         <p>
           <ol>
@@ -19,8 +19,23 @@ export default function About() {
           </ol>
         </p>
       </div>
-      <div className="learned-dev">
+      <div className="learned-dev-wrapper">
         <h1>What I've learned at Devpipeline</h1>
+        <ul>
+          <li>Learned the foundation of coding</li>
+          <li>learned good comunication in a work enviroment</li>
+          <li>Learned </li>
+        </ul>
+      </div>
+      <div className="projects-wrapper">
+        <h1>My Projects</h1>
+        <ol>
+          <li></li>
+        </ol>
+      </div>
+      <div className="fav-language-wrapper">
+        <h1>Favorite Language</h1>
+        <p>Right now javascript is my favorite becuase, i think the design of websites if very cool and you can see changes iun your code as soon as you type. For Python you have to wait a bit before you see anything.</p>
       </div>
     </div>
   )

@@ -2,8 +2,15 @@
 @import "variables.scss";
 
 @import "common.scss";
-@import "app.scss";
 @import "navigation.scss";
+@import "app.scss";
+@import "navbar.scss";
+
+
 
 @import "./pages/landing.scss";
 @import "./pages/about.scss";
+@import "./pages/Contact.scss";
+@import "./pages/gallery.scss";
+
+@import "footer.scss";

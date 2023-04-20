@@ -1,0 +1,38 @@
+.contact-page-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  .send-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      height: 100%;
+      
+      .name-wrapper {
+        input {
+          width: 25%;
+        }
+      }
+      .message-btn-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          width: 465px;
+        }
+        button {
+
+        }
+      }
+    }
+  }
+}

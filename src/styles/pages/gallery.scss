@@ -1,0 +1,16 @@
+.shows-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  // grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  
+  .show-container {
+    background-color: var(--grey);
+
+    .image-wrapper {
+      display: flex;
+      
+    }
+  }
+}

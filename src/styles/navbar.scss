@@ -1,0 +1,9 @@
+.navbar {
+  position: fixed;
+  .navbar-left {
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    gap: 10px;
+  }
+}
