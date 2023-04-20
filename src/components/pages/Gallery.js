@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import RenderShow from "../shows/RenderShow"
+import RenderGallery from "../items/GalleryItems"
+
 
 export default function Gallery() {
   const [shows, setShows] = useState([])
@@ -17,6 +18,7 @@ export default function Gallery() {
     .then((data) => {
       setShows(data)
       setLoading(false)
+      // console.log(data)
     })
     .catch((err) => {
       console.error("Fetch ShowsError: ", err)
@@ -25,8 +27,7 @@ export default function Gallery() {
 
   function renderShows() {
     return shows.map((show) => {
-      // console.log(show.image.medium)
-      return <RenderShow key={show.id} show={show} />
+      return <RenderGallery key={show.id} show={show} />
     })
   }
   return (
