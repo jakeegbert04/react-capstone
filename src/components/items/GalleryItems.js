@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
 
 export default function RenderGallery(props) {
+  const shows = props.show
   return (
     <div className="show-container">
-      <div className="title">{props.show.name}</div>
+      <div className="title">{shows.name}</div>
       <div className="image-wrapper">
-        <Link to={`/gallery/${props.show.id}`} show={props.show}>
-          <img src={props.show.image.medium} alt="show" />
+        <Link to={`/gallery/${shows.id}`} show={shows}>
+          <img src={shows.image.medium} alt="show" />
         </Link>
       </div>
     </div>
