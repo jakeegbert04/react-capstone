@@ -2,58 +2,49 @@ import { useEffect, useState } from "react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import GalleryItems from "../items/GalleryItems"
+import GalleryItem from "../items/GalleryItem"
 
 export default function Gallery() {
   const [shows, setShows] = useState([])
   const [loading, setLoading] = useState(true)
-  const [search, SetSearch] = useState('')
+  // const [search, setSearch] = useState('')
   const [filtereditems, setFiltereditems] = useState([])
+  // const [names, setNames] = useState([])
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller
+
     fetch("https://api.tvmaze.com/show", {
       signal
     })
     .then((res) => res.json())
     .then((data) => {
       setShows(data)
+      setFiltereditems(data)
       setLoading(false)
       console.log(data)
     })
     .catch((err) => {
+      setLoading(false)
       console.error("Fetch ShowsError: ", err)
     })
   }, [])
-  console.log(shows)
-  // const showFilter = shows.filter(
-  //   show => show.name.match("person of Interest")
-  // )
-  // console.log(`filter: ${showFilter}`)
 
   function searchShows(searchValue) {
-    SetSearch(searchValue)
-    if (search !== '') {
+    // setSearch(searchValue)
       const filteredShows = shows.filter((item) => {
-        return Object.values(item).join('').toLocaleLowerCase().includes(search.toLowerCase())
+        return item.genres.join(" ").toLowerCase().includes(searchValue.toLowerCase()) || item.name.toLowerCase().includes(searchValue.toLowerCase())
       })
+
       setFiltereditems(filteredShows)
-    } else {
-      setFiltereditems(shows)
-    }
   }
 
   function renderShows() {
-    if (search === '') {
-      return shows.map((show) => {
-        return <GalleryItems key={show.id} show={show} />
+      return filtereditems.map((show) => {
+        return <GalleryItem key={show.id} show={show} />
       })
-    } else {
-        return filtereditems.map((filteredShow) => {
-          return <GalleryItems key={filteredShow.id} show={filteredShow} />
-        })
-    }
   }
+
   return (
     <div className="gallery-container">
       <div className="landing-title">
@@ -61,7 +52,7 @@ export default function Gallery() {
        type="search"
        placeholder="Search..."
        onChange={(e) => searchShows(e.target.value)}
-      ></input>
+      />
         <FontAwesomeIcon icon="clapperboard" />
         <h1>Streamly</h1>
       </div>

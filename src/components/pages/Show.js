@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import ShowItem from "../items/ShowItem"
+import Reviews from "../items/Reviews"
 
 export default function Show(props) {
   const [singleShow, setSingleShow] = useState({})
@@ -25,11 +26,11 @@ export default function Show(props) {
     })
   }, [])
   
-  // console.log(singleShow.name)
   return (
     <div className="info-wrapper">
      {/* <p>{singleShow.name}</p> */}
      {loading ? <div>...loading</div> : <ShowItem singleShow={singleShow} /> }
+     {loading ? <div>...loading</div> : <Reviews /> }
     </div>
   )
 }

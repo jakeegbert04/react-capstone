@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function RenderGallery(props) {
+export default function GalleryItem(props) {
   const shows = props.show
   return (
     <div className="show-container">
