@@ -22,7 +22,7 @@ export default function Gallery() {
       setShows(data)
       setFiltereditems(data)
       setLoading(false)
-      console.log(data)
+      // console.log(data)
     })
     .catch((err) => {
       setLoading(false)

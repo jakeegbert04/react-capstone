@@ -10,7 +10,7 @@ export default function Navbar() {
     <div className="navbar navigation">
       <div className="navbar-left">
         <FontAwesomeIcon icon="clapperboard" />
-        <p>Streamly</p>
+      <NavLink exact to="/"><p>Streamly</p></NavLink>
       </div>
       <NavLink exact to="/">Landing</NavLink>
       <NavLink to="/gallery">Gallery</NavLink>

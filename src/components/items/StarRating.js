@@ -10,15 +10,16 @@ export default function StarRating() {
       {[...Array(5)].map((star, index) => {
         index += 1
         return (
-          <button 
-            key={index}
-            className={index <= ((rating && hover) || hover) ? "on" : "off"}
-            onClick={() => setRating(index)}
-            onMouseEnter={() => setHover(index)}
-            onMouseLeave={() => setHover(rating)}
-          >
-            <span className={star}><FontAwesomeIcon icon="star" /></span>
-          </button>
+            <button 
+              key={index}
+              className={index <= ((rating && hover) || hover) ? "on" : "off"}
+              onClick={() => setRating(index)}
+              onMouseEnter={() => setHover(index)}
+              onMouseLeave={() => setHover(rating)}
+            >
+              <span className={star}><FontAwesomeIcon icon="star" /></span>
+            </button>
+          
         )
       })}
     </div>

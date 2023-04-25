@@ -19,7 +19,6 @@ export default function Show(props) {
     .then((data) => {
       setSingleShow(data)
       setLoading(false)
-      // console.log(data)
     })
     .catch((err) => {
       console.error("Fetch ShowsError: ", err)
@@ -28,7 +27,6 @@ export default function Show(props) {
   
   return (
     <div className="info-wrapper">
-     {/* <p>{singleShow.name}</p> */}
      {loading ? <div>...loading</div> : <ShowItem singleShow={singleShow} /> }
      {loading ? <div>...loading</div> : <Reviews /> }
     </div>

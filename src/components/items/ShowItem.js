@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ShowItem(props) {
-  console.log(props.singleShow)
+  // console.log(props.singleShow)
   const show = props.singleShow
   const website = show.officialSite
   const summary = show.summary.replace(/<[/?][A-Z]+>|<[A-Z]+>/gmi, "")
