@@ -11,9 +11,10 @@ const customStyles = {
     right: '50%',
     bottom: '50%',
     marginRight: '-50%',
-    height: '50%',
-    width: '50%',
+    height: '25%',
+    width: '25%',
     transform: 'translate(-50%, -50%)',
+    backgroundColor: 'var(--grey)'
   },
 };
 
@@ -25,16 +26,7 @@ export default function Reviews() {
   const [description, setDescription] = useState("")
   const [reviews, setReviews] = useState([])
   
-
-  function handleOpen() {
-    SetModalIsOpen(true)
-  }
-  function handleClose(e) {
-    (e).preventDefault();
-    SetModalIsOpen(false)
-    
-  }
-
+  
   function handleSubmit(e) {
     (e).preventDefault();
 
@@ -53,6 +45,18 @@ export default function Reviews() {
     setLastName("")
     // console.log(reviews)
   }
+  function handleDelete(id) {
+    setReviews((reviews) => reviews.filter((review) => review.id !== id));
+  }
+  function handleOpen() {
+    SetModalIsOpen(true)
+  }
+  function handleClose(e) {
+    (e).preventDefault();
+    SetModalIsOpen(false)
+    
+  }
+
   // copnsole.log(reviews)
   function renderReviews() {
     return reviews.map((review) => {
@@ -61,6 +65,7 @@ export default function Reviews() {
         <ReviewItem
           key={review.id}
           review={review}
+          handleDelete={handleDelete}
         />
       )
     })
@@ -75,31 +80,37 @@ export default function Reviews() {
         contentLabel="Reviews?"
         style={customStyles}
       >
-        <button onClick={handleClose}>Close</button>
-        <div className='review-inputs'>
-          <form onSubmit={handleSubmit}>
-            <input 
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              type="text" 
-              placeholder="First Name"
-            />
-            <input
-              type="text" 
-              placeholder='Last Name'
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-            <input 
-              className='description' 
-              type="text" 
-              placeholder='Leave a Review' 
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-            
-            <button type="submit">Submit</button>
-          </form>
+        <div className='modal'>
+          <button onClick={handleClose}>Close</button>
+          <div className='review-inputs'>
+            <form onSubmit={handleSubmit}>
+              <div className='names'>
+                <input 
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  type="text" 
+                  placeholder="First Name"
+                />
+                <input
+                  type="text" 
+                  placeholder='Last Name'
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+              <div>
+                <input 
+                  className='description' 
+                  type="text" 
+                  placeholder='Leave a Review' 
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+                
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
       </Modal>
       {renderReviews()}

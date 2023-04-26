@@ -56,9 +56,9 @@ export default function Gallery() {
         <FontAwesomeIcon icon="clapperboard" />
         <h1>Streamly</h1>
       </div>
-      <div className="shows-grid">
-        {loading ? <div>...Loading</div> : renderShows()}
-      </div>
+        <div className="shows-grid">
+          {loading ? <div>...Loading</div> : renderShows()}
+        </div>
     </div>
   )
 }

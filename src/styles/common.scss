@@ -5,9 +5,17 @@ body, html {
   overflow-x: hidden;
   overflow: overlay;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--grey);
   
 }
 #root {
   height: 100%;
   width: 100%;
+}
+
+input {
+  
+  &:focus {
+    outline: none;
+  }
 }
