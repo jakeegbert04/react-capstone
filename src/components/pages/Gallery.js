@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import GalleryItem from "../items/GalleryItem"
@@ -22,7 +21,6 @@ export default function Gallery() {
       setShows(data)
       setFiltereditems(data)
       setLoading(false)
-      // console.log(data)
     })
     .catch((err) => {
       setLoading(false)

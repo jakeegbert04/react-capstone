@@ -1,35 +1,47 @@
-// .star-rating {
 
-//   button {
-//     background-color: transparent;
-//     border: none;
-//     outline: none;
-//     cursor: pointer;
-//   }
-//   .on {
-//     color: goldenrod;
-//   }
-//   .off {
-//     color: #000;
-//   }
-// }
-
-.review-input-container {
-  
-}
 .modal {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
   width: 100%;
-  height: 100%;
-
-  .description-submit {
-    display: flex;
-    flex-direction: column;
-    .description {
-      // height: 10%;
-      // width: 20%;
-    }
+  width: 100%;
+  // border: solid red 1px;
+  gap: 15px;
+  
+  button {
+    height: 10%;
+    width: 20%;
   }
+  
+  .review-inputs {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    // border: solid green 1px;
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .description-submit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .description {
+        font-family: 'Roboto', sans-serif;
+        height: 100px;
+        width: 400px;
+        resize: none;
+      }
+    }
+
+    
+  }
+  
 
 }

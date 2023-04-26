@@ -11,10 +11,11 @@ const customStyles = {
     right: '50%',
     bottom: '50%',
     marginRight: '-50%',
-    height: '25%',
-    width: '25%',
+    height: '50%',
+    width: '50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: 'var(--grey)'
+    backgroundColor: 'var(--grey)',
+    overflow: "hidden",
   },
 };
 
@@ -43,7 +44,6 @@ export default function Reviews() {
     setDescription("")
     setFirstName("")
     setLastName("")
-    // console.log(reviews)
   }
   function handleDelete(id) {
     setReviews((reviews) => reviews.filter((review) => review.id !== id));
@@ -57,11 +57,9 @@ export default function Reviews() {
     
   }
 
-  // copnsole.log(reviews)
   function renderReviews() {
     return reviews.map((review) => {
       return (
-        // console.log(review)
         <ReviewItem
           key={review.id}
           review={review}
@@ -72,8 +70,13 @@ export default function Reviews() {
   }
 
   return (
+    <>
+    
     <div className="review-input-container">
-      <button className='add-review' onClick={handleOpen}>Add Review</button>
+        <button className='add-review' onClick={handleOpen}>Add Review</button>
+      {renderReviews()}
+    
+    </div>
       <Modal
         ariaHideApp={false}
         isOpen={modalIsOpen}
@@ -84,7 +87,7 @@ export default function Reviews() {
           <button onClick={handleClose}>Close</button>
           <div className='review-inputs'>
             <form onSubmit={handleSubmit}>
-              <div className='names'>
+              <div className='input-names'>
                 <input 
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
@@ -98,24 +101,21 @@ export default function Reviews() {
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
-              <div>
-                <input 
-                  className='description' 
-                  type="text" 
+              <div className="description-submit">
+                <textarea
+                  className='description'  
                   placeholder='Leave a Review' 
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                />
-                
+                >
+                </textarea>
+                  
                 <button type="submit">Submit</button>
               </div>
             </form>
           </div>
         </div>
       </Modal>
-      {renderReviews()}
-      
-
-    </div>
+    </>
   )
 }

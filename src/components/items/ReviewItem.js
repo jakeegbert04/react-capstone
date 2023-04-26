@@ -3,7 +3,7 @@ export default function reviewItem(props) {
   console.log(firstName)
   return (
     <div className="review-item">
-      <div className="edit-delete-container">
+      <div className="review-button-container">
         <button onClick={() => props.handleDelete(id)}>X</button>
       </div>
       <div className="names">
