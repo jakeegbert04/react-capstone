@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 
-import StarRating from './StarRating';
 import ReviewItem from "./ReviewItem"
+import ReviewModal from '../modals/ReviewModel';
 
 const customStyles = {
   content: {
@@ -19,18 +19,19 @@ const customStyles = {
   },
 };
 
+Modal.setAppElement("#root")
 
 export default function Reviews() {
-  const [modalIsOpen, SetModalIsOpen] = useState(false)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [description, setDescription] = useState("")
   const [reviews, setReviews] = useState([])
+  const [reviewToEdit, setReviewToEdit] = useState(null)
   
   
   function handleSubmit(e) {
     (e).preventDefault();
-
     setReviews((reviews) => {
       const newReview = {
         id: reviews.at(-1)?.id + 1 || 1,
@@ -38,25 +39,29 @@ export default function Reviews() {
         lastName: lastName,
         description: description
       };
+
       return [...reviews, newReview]
     })
-    SetModalIsOpen(false)
+    setModalIsOpen(false)
     setDescription("")
     setFirstName("")
     setLastName("")
+    setReviewToEdit(null)
   }
+
   function handleDelete(id) {
     setReviews((reviews) => reviews.filter((review) => review.id !== id));
   }
+
   function handleOpen() {
-    SetModalIsOpen(true)
-  }
-  function handleClose(e) {
-    (e).preventDefault();
-    SetModalIsOpen(false)
-    
+    setModalIsOpen(true)
   }
 
+  function handleClose() {
+    setModalIsOpen(false)
+    setReviewToEdit(null)
+  }
+  
   function renderReviews() {
     return reviews.map((review) => {
       return (
@@ -64,10 +69,21 @@ export default function Reviews() {
           key={review.id}
           review={review}
           handleDelete={handleDelete}
+          setReviewToEdit={setReviewToEdit}
+          handleOpen={handleOpen}
         />
       )
     })
   }
+
+  useEffect(() => {
+    if(reviewToEdit) {
+      setFirstName(reviewToEdit.firstName)
+
+    } else {
+      setFirstName(fName => fName)
+    }
+  }, [reviewToEdit])
 
   return (
     <>
@@ -77,14 +93,14 @@ export default function Reviews() {
       {renderReviews()}
     
     </div>
+
       <Modal
-        ariaHideApp={false}
         isOpen={modalIsOpen}
-        contentLabel="Reviews?"
         style={customStyles}
+        onRequestClose={() => setModalIsOpen(false)}
       >
         <div className='modal'>
-          <button onClick={handleClose}>Close</button>
+          <button onClick={() => setModalIsOpen(false)}>Close</button>
           <div className='review-inputs'>
             <form onSubmit={handleSubmit}>
               <div className='input-names'>
@@ -92,7 +108,7 @@ export default function Reviews() {
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   type="text" 
-                  placeholder="First Name"
+                  placeholder={reviewToEdit ? null : "First Name"}
                 />
                 <input
                   type="text" 
