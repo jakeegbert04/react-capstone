@@ -1,7 +1,33 @@
+.gallery-title-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 4%;
+
+  input {
+    border: none;
+    height: 2.5rem;
+    font-size: 15px;
+    width: 30rem;
+    text-align: left;
+    @include transition;
+
+    &:hover {
+      background-color: var(--light-grey);
+    }
+  }
+  .title-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
 .shows-grid {
   display: grid;
   justify-content: space-around;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   height: 100%;
   margin: auto;
   width: 95%;

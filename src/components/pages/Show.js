@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 
 import ShowItem from "../items/ShowItem"
 import Reviews from "../items/Reviews"
+import Loading from "../items/Loading"
 
 export default function Show(props) {
   const [singleShow, setSingleShow] = useState({})
@@ -27,8 +28,8 @@ export default function Show(props) {
   
   return (
     <div className="info-wrapper">
-     {loading ? <div>...loading</div> : <ShowItem singleShow={singleShow} /> }
-     {loading ? <div>...loading</div> : <Reviews /> }
+     {loading ? <Loading /> : <ShowItem singleShow={singleShow} /> }
+     {loading ? "" : <Reviews /> }
     </div>
   )
 }

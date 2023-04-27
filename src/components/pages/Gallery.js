@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import GalleryItem from "../items/GalleryItem"
+import Loading from "../items/Loading";
 
 export default function Gallery() {
   const [shows, setShows] = useState([])
@@ -43,17 +44,20 @@ export default function Gallery() {
 
   return (
     <div className="gallery-container">
-      <div className="landing-title">
-      <input
-       type="search"
-       placeholder="Search..."
-       onChange={(e) => searchShows(e.target.value)}
-      />
-        <FontAwesomeIcon icon="clapperboard" />
-        <h1>Streamly</h1>
+      <div className="gallery-title-container">
+        <div className="landing-title">
+          <FontAwesomeIcon icon="clapperboard" />
+          <h1>Streamly</h1>
+        </div>
+        <input
+        type="search"
+        placeholder="Search for Genre or Title"
+        onChange={(e) => searchShows(e.target.value)}
+        />
       </div>
+      {/* <div className="loading-animation"></div> */}
         <div className="shows-grid">
-          {loading ? <div>...Loading</div> : renderShows()}
+          {loading ? <Loading /> : renderShows()}
         </div>
     </div>
   )
