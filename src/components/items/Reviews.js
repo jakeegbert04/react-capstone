@@ -88,8 +88,11 @@ export default function Reviews() {
   return (
     <>
     
-    <div className="review-input-container">
+    <div className="review-input-wrapper">
+      <div className="add-review-buttton">
         <button className='add-review' onClick={handleOpen}>Add Review</button>
+      </div>
+      <div className="review-wrapper"></div>
       {renderReviews()}
     </div>
       <Modal

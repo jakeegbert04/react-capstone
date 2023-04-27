@@ -1,3 +1,30 @@
+.review-input-wrapper {
+  @include size-100;
+  margin-top: 4%;
+  .add-review-buttton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    button {
+      border: none;
+      padding: 1% 2.5%;
+      border-radius: 10px;
+      @include transition;
+
+      &:hover {
+        background-color: var(--light-grey);
+
+      }
+    }
+  }
+  .review-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include size-100;
+  }
+}
+
 .modal {
   display: flex;
   flex-direction: column;
@@ -31,6 +58,7 @@
         font-family: 'Roboto', sans-serif;
         height: 100px;
         width: 400px;
+        outline: none;
         resize: none;
       }
     }
