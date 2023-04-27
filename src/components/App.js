@@ -8,8 +8,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./navigation/Footer";
 
-
 export default function App() {
+  
   return (
     <div className="app">
       <Router>

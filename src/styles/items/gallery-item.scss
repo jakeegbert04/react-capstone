@@ -1,0 +1,30 @@
+.show-container {
+  display: flex;
+  flex-direction: column;
+  @include size-100;
+  background-color: var(--soft-yellow);
+  align-items: center;
+  text-align: center;
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 90%;
+
+    img {
+      display: flex;
+      @include size-100;
+      
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    color: var(--grey);
+  }
+}

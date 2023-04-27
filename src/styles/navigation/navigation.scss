@@ -19,6 +19,7 @@ a {
   text-decoration: none;
   color: var(--light-grey);
   cursor: pointer;
+  @include transition;
 
   &:hover {
     color:aqua;

@@ -7,39 +7,4 @@
   width: 95%;
   background-color: var(--grey);
   gap: 30px;
-  
-  
-  .show-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background-color: var(--soft-yellow);
-    align-items: center;
-    text-align: center;
-
-    .image-wrapper {
-      display: flex;
-      justify-content: center;
-      width: 80%;
-      height: 90%;
-
-      
-      img {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        
-        &:hover {
-          opacity: .8;
-        }
-      }
-    }
-    .title {
-      display: flex;
-      justify-content: center;
-      color: var(--grey);
-      
-    }
-  }
 }

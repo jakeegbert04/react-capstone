@@ -1,10 +1,10 @@
-@import "mixins.scss";
-@import "variables.scss";
+@import "./common/mixins.scss";
+@import "./common/variables.scss";
+@import "./common/common.scss";
 
-@import "common.scss";
-@import "navbar.scss";
-@import "navigation.scss";
-@import "app.scss";
+@import "./navigation/navbar.scss";
+@import "./navigation/navigation.scss";
+@import "./common/app.scss";
 
 
 
@@ -13,6 +13,9 @@
 @import "./pages/Contact.scss";
 @import "./pages/gallery.scss";
 @import "./pages/show.scss";
-@import "./reviews.scss";
 
-@import "footer.scss";
+@import "./items/gallery-item.scss";
+@import "./items/reviews.scss";
+@import "./items/review-item.scss";
+
+@import "./navigation/footer.scss";

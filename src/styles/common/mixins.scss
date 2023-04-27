@@ -1,0 +1,15 @@
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin transition {
+  transition-delay: .15s;
+  transition-duration: .3s;
+}
+
+@mixin size-100 {
+  width: 100%;
+  height: 100%;
+}

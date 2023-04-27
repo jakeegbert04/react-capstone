@@ -1,4 +1,5 @@
 export default function About() {
+  
   return (
     <div className="descriptions">
       <div className="about-project-wrapper">

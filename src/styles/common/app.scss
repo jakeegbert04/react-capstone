@@ -1,0 +1,13 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  color: var(--light-grey);
+  background-color: var(--grey);
+  @include  size-100;
+
+  .main-container {
+    background-color: var(--grey);
+    margin-top: 3%;
+    @include size-100;
+  }
+}

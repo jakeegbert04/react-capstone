@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import initIcons from "../icons";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar() {
   initIcons()
+  
   return (
     <div className="navbar navigation">
       <div className="navbar-left">

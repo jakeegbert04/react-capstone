@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ShowItem(props) {
-  // console.log(props.singleShow)
   const show = props.singleShow
   const website = show.officialSite
   const summary = show.summary.replace(/<[/?][A-Z]+>|<[A-Z]+>/gmi, "")
@@ -16,13 +15,14 @@ export default function ShowItem(props) {
           <img src={show.image.medium} alt="Single Show" />
           <h1 className="rating">{show.rating.average}{star} Out of 10 {star}</h1>
         </div>
+        
         <div className="right-column-container">
           <p className="summary">{summary}</p>
           <p>{`Language is in ${show.language}`}</p>
           <p>{`Premiered: ${show.premiered}`}</p>
           <p>Ended: {(show.ended === null) ? "Still Running" : `${show.ended}`}</p>
           <p>{`Run Time: ${show.runtime}`}</p>
-          <p>Website: {(website === null) ? "No website" : <a rel="noreferrer" target="_blank" href={website}>{website}</a>} </p>
+          <p>Website: {(website === null) ? "No website" : <a rel="noreferrer" target="_blank" href={website}>{website}</a>}</p>
         </div>
       </div>
     </div>

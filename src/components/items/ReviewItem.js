@@ -1,10 +1,7 @@
-
-
 export default function ReviewItem(props) {
   const { firstName, lastName, description, id} = props.review
-  // console.log(firstName)
 
-  function handleOpenEdit(e) {
+  function handleOpenEdit() {
     props.setReviewToEdit(props.review)
     props.handleOpen()
   }

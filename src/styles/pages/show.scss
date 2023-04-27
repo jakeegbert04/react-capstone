@@ -1,5 +1,6 @@
 .show-container {
   display: flex;
+  
   .show-information {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -7,6 +8,7 @@
     .left-column-container {
       margin-left: 10%;
     }
+
     .right-column-container {
       display: flex;
       width: 70%;

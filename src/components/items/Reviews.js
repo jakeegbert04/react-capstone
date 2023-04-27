@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 
 import ReviewItem from "./ReviewItem"
-import ReviewModal from '../modals/ReviewModel';
 
 const customStyles = {
   content: {
@@ -29,9 +28,9 @@ export default function Reviews() {
   const [reviews, setReviews] = useState([])
   const [reviewToEdit, setReviewToEdit] = useState(null)
   
-  
   function handleSubmit(e) {
     (e).preventDefault();
+
     setReviews((reviews) => {
       const newReview = {
         id: reviews.at(-1)?.id + 1 || 1,
@@ -42,6 +41,7 @@ export default function Reviews() {
 
       return [...reviews, newReview]
     })
+
     setModalIsOpen(false)
     setDescription("")
     setFirstName("")
@@ -91,9 +91,7 @@ export default function Reviews() {
     <div className="review-input-container">
         <button className='add-review' onClick={handleOpen}>Add Review</button>
       {renderReviews()}
-    
     </div>
-
       <Modal
         isOpen={modalIsOpen}
         style={customStyles}

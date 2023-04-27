@@ -6,9 +6,8 @@ import GalleryItem from "../items/GalleryItem"
 export default function Gallery() {
   const [shows, setShows] = useState([])
   const [loading, setLoading] = useState(true)
-  // const [search, setSearch] = useState('')
   const [filtereditems, setFiltereditems] = useState([])
-  // const [names, setNames] = useState([])
+
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller
@@ -29,11 +28,10 @@ export default function Gallery() {
   }, [])
 
   function searchShows(searchValue) {
-    // setSearch(searchValue)
       const filteredShows = shows.filter((item) => {
         return item.genres.join(" ").toLowerCase().includes(searchValue.toLowerCase()) || item.name.toLowerCase().includes(searchValue.toLowerCase())
       })
-
+      
       setFiltereditems(filteredShows)
   }
 
