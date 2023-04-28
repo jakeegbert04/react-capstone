@@ -1,20 +1,28 @@
 .show-container {
   display: flex;
-  
-  .show-information {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-
-    .left-column-container {
-      margin-left: 10%;
-    }
-
-    .right-column-container {
+  @include size-100;
+  .show-item-container {
+    display: flex;
+    width: 100%;
+    background-color: var(--charcoal);
+    
+    .show-information-container {
       display: flex;
-      width: 70%;
-      flex-direction: column;
-      justify-content: center;
-      margin-left: 10%;
+      width: 80%;
+      margin: auto;
+      gap: 10%;
+
+      .left-column-wrapper{
+        width: 100%;
+      }
+      
+      .right-column-wrapper {
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
     }
   }
 }

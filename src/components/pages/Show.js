@@ -27,7 +27,7 @@ export default function Show(props) {
   }, [])
   
   return (
-    <div className="info-wrapper">
+    <div className="show-container">
      {loading ? <Loading /> : <ShowItem singleShow={singleShow} /> }
      {loading ? "" : <Reviews /> }
     </div>

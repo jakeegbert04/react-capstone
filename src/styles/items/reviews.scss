@@ -1,6 +1,8 @@
 .review-input-wrapper {
   @include size-100;
   margin-top: 4%;
+  background-color: var(--grey);
+
   .add-review-buttton {
     display: flex;
     width: 100%;
@@ -14,13 +16,14 @@
 
       &:hover {
         background-color: var(--light-grey);
-
+        color: var(--grey)
       }
     }
   }
   .review-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 33.33%);
+    margin-top: 10%;
     @include size-100;
   }
 }
@@ -34,8 +37,13 @@
   @include size-100;
   
   button {
-    height: 10%;
-    width: 20%;
+    border: none;
+    border-radius: 10px;
+    
+    &:hover {
+      background-color: var(--light-grey);
+      color: var(--grey);
+    }
   }
   
   .review-inputs {
@@ -46,21 +54,35 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 5px;
       @include size-100;
-    }
-    
-    .description-submit {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .description {
-        font-family: 'Roboto', sans-serif;
-        height: 100px;
-        width: 400px;
-        outline: none;
-        resize: none;
+      input {
+        border-radius: 10px;
+        border: none;
+      }
+      .input-names {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+      .description-submit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        @include size-100;
+        
+        .description {
+          font-family: 'Roboto', sans-serif;
+          height: 40%;
+          width: 80%;
+          border-radius: 10px;
+          outline: none;
+          resize: none;
+        }
       }
     }
+    
   }
 }

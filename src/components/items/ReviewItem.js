@@ -12,10 +12,12 @@ export default function ReviewItem(props) {
         <button onClick={() => props.handleDelete(id)}>X</button>
         <button onClick={handleOpenEdit}>Edit</button>
       </div>
-      <div className="names">
-        <p>{`${firstName} ${lastName}`}</p>
+      <div className="review-info-container">
+        <div className="names">
+          <p>{`${firstName} ${lastName}`}</p>
+        </div>
+        <div><p>{description}</p></div>
       </div>
-      <p>{description}</p>
     </div>
   )
 }

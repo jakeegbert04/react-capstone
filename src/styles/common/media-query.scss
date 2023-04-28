@@ -1,0 +1,46 @@
+@media (max-width: 400px) {
+  .review-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .review-inputs {
+    .input-names {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  .contact-page-container {
+    display: flex;
+    flex-direction: column;
+
+    .contact-us-wrapper {
+      font-size: 30px;
+      margin-bottom: 5%;
+    }
+  }
+
+  .gallery-title-container {
+    input {
+      width: 15rem;
+    }
+  }
+  .shows-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .landing-title {
+    font-size: 30px;
+  }
+
+  .show-container {
+    flex-direction: column;
+    
+    .show-information-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  
+}

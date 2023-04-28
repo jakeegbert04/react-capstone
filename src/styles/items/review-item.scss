@@ -1,0 +1,33 @@
+.review-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--charcoal);
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+
+  .review-info-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review-button-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    button {
+      border: 1px solid transparent;
+      padding: 3px 5px;
+      color: var(--light-grey);
+      background-color: transparent;
+      border-radius: 10px;
+      @include transition;
+
+      &:hover {
+        background-color: var(--light-grey);
+        color: var(--grey)
+      }
+    }
+  }
+}

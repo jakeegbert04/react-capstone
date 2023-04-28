@@ -92,8 +92,9 @@ export default function Reviews() {
       <div className="add-review-buttton">
         <button className='add-review' onClick={handleOpen}>Add Review</button>
       </div>
-      <div className="review-wrapper"></div>
-      {renderReviews()}
+      <div className="review-wrapper">
+        {renderReviews()} 
+      </div>
     </div>
       <Modal
         isOpen={modalIsOpen}

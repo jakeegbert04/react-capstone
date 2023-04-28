@@ -11,8 +11,8 @@
     border: 16px solid var(--light-grey);
     border-radius: 50%;
     border-top: 16px solid var(--charcoal);
-    width: 500px;
-    height: 500px;
+    width: 250px;
+    height: 250px;
     -webkit-animation: spin .7s linear infinite;
     animation: spin .7s linear infinite;
   }
@@ -20,12 +20,5 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
-}
-
-@media (max-width: 400px) {
-  .loading-animation {
-    width: 5%;
-    height: 5%; 
   }
 }

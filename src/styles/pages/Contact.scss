@@ -93,16 +93,3 @@
     font-size: 40px;
   }
 }
-
-@media (max-width: 400px) {
-  .contact-page-container {
-    display: flex;
-    flex-direction: column;
-
-    .contact-us-wrapper {
-      font-size: 30px;
-      margin-bottom: 5%;
-    }
-  }
-
-}
