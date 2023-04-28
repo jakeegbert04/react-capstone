@@ -1,0 +1,17 @@
+.about-container {
+  display: flex;
+  justify-content: center;
+  // @include size-100;
+  
+  .descriptions-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 5%;
+    padding: 30px;
+    background-color: var(--charcoal);
+    box-shadow: 0px 0px 93px 11px rgba(0,0,0,0.5);
+  }
+}

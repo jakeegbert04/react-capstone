@@ -14,16 +14,16 @@
     justify-content: center;
     align-items: center;
     grid-column-start: 1;
-    @include size-100;
     color: var(--grey);
+    @include size-100;
 
     form {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      @include size-100;
       gap: 5px;
+      @include size-100;
       
       .name-wrapper {
         display: flex;
@@ -69,7 +69,7 @@
         }
 
         button {
-          width: 10%;
+          
           background-color: white;
           color: grey;
           border: none;
@@ -92,4 +92,17 @@
     grid-column-start: 2;
     font-size: 40px;
   }
+}
+
+@media (max-width: 400px) {
+  .contact-page-container {
+    display: flex;
+    flex-direction: column;
+
+    .contact-us-wrapper {
+      font-size: 30px;
+      margin-bottom: 5%;
+    }
+  }
+
 }

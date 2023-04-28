@@ -8,9 +8,9 @@
   .loading-animation {
     display: flex;
     margin-bottom: 25px;
-    border: 16px solid #f3f3f3;
+    border: 16px solid var(--light-grey);
     border-radius: 50%;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid var(--charcoal);
     width: 500px;
     height: 500px;
     -webkit-animation: spin .7s linear infinite;
@@ -20,5 +20,12 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+}
+
+@media (max-width: 400px) {
+  .loading-animation {
+    width: 5%;
+    height: 5%; 
   }
 }

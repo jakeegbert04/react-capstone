@@ -18,6 +18,7 @@ export default function Gallery() {
     })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data)
       setShows(data)
       setFiltereditems(data)
       setLoading(false)
@@ -55,10 +56,11 @@ export default function Gallery() {
         onChange={(e) => searchShows(e.target.value)}
         />
       </div>
-      {/* <div className="loading-animation"></div> */}
         <div className="shows-grid">
           {loading ? <Loading /> : renderShows()}
         </div>
     </div>
   )
 }
+
+
