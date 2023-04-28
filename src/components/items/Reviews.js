@@ -56,11 +56,6 @@ export default function Reviews() {
   function handleOpen() {
     setModalIsOpen(true)
   }
-
-  function handleClose() {
-    setModalIsOpen(false)
-    setReviewToEdit(null)
-  }
   
   function renderReviews() {
     return reviews.map((review) => {
@@ -87,7 +82,6 @@ export default function Reviews() {
 
   return (
     <>
-    
     <div className="review-input-wrapper">
       <div className="add-review-buttton">
         <button className='add-review' onClick={handleOpen}>Add Review</button>
