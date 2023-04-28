@@ -18,7 +18,6 @@ export default function Gallery() {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
       setShows(data)
       setFiltereditems(data)
       setLoading(false)

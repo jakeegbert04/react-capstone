@@ -9,7 +9,6 @@ export default function About() {
         </div>
         <div className="industry-goals-wrapper">
           <h1>Industry Goals </h1>
-          <p>
             <ol>
               <li>Pass Front End and Back End classes</li>
               <li>Stay with Devpipeline until i feel confident in myself to look for a different job</li>
@@ -20,7 +19,6 @@ export default function About() {
               <li>I really want to build a website or app to help people</li>
               <li>Build a medication organizer app that my aunt thought of</li>
             </ol>
-          </p>
         </div>
         <div className="learned-dev-wrapper">
           <h1>What I've learned at Devpipeline</h1>
