@@ -14,15 +14,15 @@ export default function App() {
     <div className="app">
       <Router>
         <Navbar />
+      <div className="main-container">
         <Switch>
-          <div className="main-container">
             <Route exact path="/" component={Landing} />
             <Route exact path="/gallery" component={Gallery} />
             <Route path="/gallery/:id" component={Show} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
-          </div>
         </Switch>
+      </div>
         <Footer />
       </Router>
     </div>
